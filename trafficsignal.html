@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="trafficsignal.css">
+    <script>
+        var flag = 0;
+
+function traffic() {
+    var time = document.getElementById("time");
+    var green = document.getElementById("img3");
+    var red = document.getElementById("img1");
+    var yellow = document.getElementById("img2");
+
+    if (flag == 0) {
+        time.innerHTML = "30";
+        green.style.opacity = "1";
+        yellow.style.opacity = "0.1";
+        red.style.opacity = "0.1";
+        flag = 1;
+        var countdown = 30;
+        var interval = setInterval(function () {
+            countdown--;
+            time.innerHTML = countdown;
+            document.getElementById("body1").style.backgroundImage = "url(images/giphy.gif)";
+            if (countdown <= 0) {
+                clearInterval(interval);
+                traffic();
+            }
+        }, 1000); // Update time every 1 second
+    } else if (flag == 1) {
+        time.innerHTML = "4";
+        green.style.opacity = "0.1";
+        yellow.style.opacity = "1";
+        red.style.opacity = "0.1";
+        flag = 2;
+        var countdown = 4;
+        var interval = setInterval(function () {
+            countdown--;
+            time.innerHTML = countdown;
+            document.getElementById("body1").style.backgroundImage = "url(images/trafficsignalphoto.jpg)";
+            if (countdown <= 0) {
+                clearInterval(interval);
+                traffic();
+            }
+        }, 1000);
+         // Change signal after 4 seconds
+    } 
+    else if (flag == 2) {
+        time.innerHTML = "60";
+        green.style.opacity = "0.1";
+        yellow.style.opacity = "0.1";
+        red.style.opacity = "1";
+        flag = 0;
+        var countdown = 60;
+        var interval = setInterval(function () {
+            countdown--;
+            time.innerHTML = countdown;
+            document.getElementById("body1").style.backgroundImage = "url(images/trafficsignalphoto.jpg)";
+            if (countdown <= 0) {
+                clearInterval(interval);
+                traffic();
+            }
+        }, 1000); // Update time every 1 second
+    }
+}
+
+// Start the traffic simulation when the page loads
+window.onload = function() {
+    traffic();
+};
+        
+    </script>
+</head>
+<body onload="traffic()" id="body1">
+    <table class="maintable">
+        <tr>
+            <td><h1 id="time">60</h1></td>
+        </tr>
+        <tr>
+            <td><h4><img src="images/trafficsignal.png" alt="Error" id="img1"></h4></td>
+        </tr>
+            <td><h4><img src="images/trafficsignal1.png" alt="Error" id="img2"></h4></td>
+        </tr>
+        <tr>
+            <td><h4><img src="images/trafficsignal2.png" alt="Error" id="img3"></h4></td>
+        </tr>
+    </table>
+    <table class="rod">
+        <tr>
+            <td colspan="3"></td>
+        </tr>
+    </table>
+</body>
+</html>

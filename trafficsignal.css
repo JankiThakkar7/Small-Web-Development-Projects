@@ -1,0 +1,39 @@
+.maintable{
+    background-color: black;
+    border: 2px solid black;
+    margin-left: auto;
+    margin-right: auto;
+    width: 150px;
+    height: 150px; 
+}
+
+h1{
+    color: orange;
+    text-align: center;
+    font-size: 45px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
+}
+
+.rod{
+    background-color: black;
+    border: 2px solid black;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50px;
+    height: 190px;
+}
+
+body{
+    background-image: url(images/giphy.gif);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+h4{
+    color: orange;
+    text-align: center;
+    font-size: 0px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
+}

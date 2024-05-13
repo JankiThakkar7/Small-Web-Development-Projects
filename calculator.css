@@ -1,0 +1,11 @@
+.calculator {
+    max-width: 500px;
+    margin: 0 auto;
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.operator {
+    margin: 5px;
+}
